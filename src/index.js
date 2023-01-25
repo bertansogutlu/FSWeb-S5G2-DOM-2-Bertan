@@ -60,9 +60,13 @@ const img1 = document.createElement("img");
 const img2 = document.createElement("img");
 const img3 = document.createElement("img");
 
-img1.src = "https://picsum.photos/id/65/100/50";
-img2.src = "https://picsum.photos/id/28/100/50";
-img3.src = "https://picsum.photos/id/54/100/50";
+img1.src = "https://picsum.photos/id/65/1000/500";
+img2.src = "https://picsum.photos/id/28/1000/500";
+img3.src = "https://picsum.photos/id/54/1000/500";
+
+img1.style.width = "100px"
+img2.style.width = "100px"
+img3.style.width = "100px"
 
 img1.id = "img1source";
 img2.id = "img2source";
@@ -98,6 +102,11 @@ imgIntro.addEventListener("drop", (event) => {
     event.preventDefault();
    const sourceID = event.dataTransfer.getData("text/plain");
    const sourceElement = document.getElementById(sourceID);
+   const targetSrc = event.target.src;
    event.target.src = sourceElement.src;
-   
+   sourceElement.src = targetSrc;
+   sourceElement.style.width = "100px";
+   sourceElement.style.height = "50px";
+   event.target.style.width = "800px";
+   event.target.style.height = "240px";
 })
