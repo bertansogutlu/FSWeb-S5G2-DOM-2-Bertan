@@ -36,3 +36,23 @@ buttons[2].addEventListener('mouseenter', (event) => {
 buttons[2].addEventListener('mouseleave', (event) => {
     desImg.src = 'http://localhost:9000/img/destination.jpg'
 })
+
+const body = document.querySelector('body');
+const newDiv = document.createElement('div');
+newDiv.textContent = 'Şimdi Al Martta Öde';
+newDiv.style.fontSize = '40px'
+newDiv.style.display = 'inline'
+newDiv.style.backgroundColor = 'yellow'
+
+
+const introImg = document.querySelector('.intro img');
+
+introImg.addEventListener('mouseover', (event) => {
+    body.prepend(newDiv)
+})
+
+
+body.addEventListener('resize', (event) => {
+    console.log(event)
+})
+
